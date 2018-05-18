@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "---------------"
 echo "in build script"
-env
-ls
+echo "MYVAR $MYVAR"
+echo "MYSECRETVAR $MYSECRETVAR"
+./this.py
