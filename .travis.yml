@@ -2,12 +2,12 @@
 
 language: python
 python:
-  - "3.4"
+  - "3.5"
 
 # have the docker service set up (we'll
 # update it later)
-#services:
-#  - 'docker'
+services:
+  - 'docker'
 
 # prepare the machine before any code
 # installation scripts
