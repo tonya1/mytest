@@ -19,7 +19,7 @@ while getopts bp option ; do
   case $option in
     b) # Pass gridappsd tag to docker-compose
       # Docker file on travis relative from root.
-      docker build --build-arg TIMESTAMP="${BUILD_VERSION}" -t ${IMAGE}:${TIMESTAMP}_${GITHASH} .
+      docker build -t test .
       ;;
     p) # Pass gridappsd tag to docker-compose
       #if [ -n "$TAG" -a -n "$ORG" ]; then
