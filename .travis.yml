@@ -15,7 +15,7 @@ services:
   #- './.travis/main.sh'
   
 script:
-  - './.travis/build.sh'
+  - './.travis/build.sh -b'
 
 # only execute the following instructions in
 # the case of a success (failing at this point
@@ -26,5 +26,5 @@ script:
 # page of your repository and then change the 
 # environment in the settings pannel.
 after_success:
-  - './.travis/build.sh'
+  - './.travis/build.sh -p'
 
