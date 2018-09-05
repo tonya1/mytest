@@ -16,7 +16,10 @@ while getopts bp option ; do
       # Docker file on travis relative from root.
       docker build -t ${IMAGE}:${TIMESTAMP}_${GITHASH} .
       status=$?
-      echo "build status $status"
+      if [ $status -ne 0 ]; then
+        echo "Error: status $status"
+        exit 1
+      fi
 
       ;;
     p) # Pass gridappsd tag to docker-compose
@@ -27,19 +30,28 @@ while getopts bp option ; do
         echo "$CONTAINER"
 
         echo "docker push ${CONTAINER}"
-        docker push ${CONTAINER}
+        docker push "x${CONTAINER}"
         status=$?
-        echo "push status $status"
+        if [ $status -ne 0 ]; then
+          echo "Error: status $status"
+          exit 1
+        fi
 
         echo "docker tag ${CONTAINER} ${IMAGE}:$TAG"
         docker tag ${CONTAINER} ${IMAGE}:$TAG
         status=$?
-        echo "tag status $status"
+        if [ $status -ne 0 ]; then
+          echo "Error: status $status"
+          exit 1
+        fi
 
         echo "docker push ${IMAGE}:$TAG"
         docker push ${IMAGE}:$TAG
         status=$?
-        echo "push status $status"
+        if [ $status -ne 0 ]; then
+          echo "Error: status $status"
+          exit 1
+        fi
       fi
       ;;
     *) # Print Usage

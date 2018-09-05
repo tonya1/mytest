@@ -1,8 +1,8 @@
 # make use of vm's
 
-language: python
-python:
-  - "3.5"
+language: ruby
+# python:
+#   - "3.5"
 
 # have the docker service set up (we'll
 # update it later)
@@ -20,12 +20,15 @@ script:
 # only execute the following instructions in
 # the case of a success (failing at this point
 # won't mark the build as a failure).
+
+
 # To have `DOCKER_USERNAME` and `DOCKER_PASSWORD`
 # filled you need to either use `travis`' cli 
 # and then `travis set ..` or go to the travis
 # page of your repository and then change the 
 # environment in the settings pannel.
-after_success:
+#after_success:
  - if [ -n "$DOCKER_USERNAME" -a -n "$DOCKER_PASSWORD" ]; then
-      echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin ;
-      ./.travis/build-docker.sh -p;
+      echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin;
+      ./.travis/build.sh -p;
+   fi
