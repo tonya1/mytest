@@ -14,18 +14,4 @@ services:
 #before_install:
   #- './.travis/main.sh'
 
-# combine the script commands to only run the 2nd command
-# if the first command succeeeds.
-
-
-# To have `DOCKER_USERNAME` and `DOCKER_PASSWORD`
-# filled you need to either use `travis`' cli 
-# and then `travis set ..` or go to the travis
-# page of your repository and then change the 
-# environment in the settings pannel.  
-
-script:  './.travis/build.sh -b' && \
-if [ -n "$DOCKER_USERNAME" -a -n "$DOCKER_PASSWORD" ]; then
-  echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin;
-  ./.travis/build.sh -p;
-fi
+script: ./.travis/build.sh -b 
