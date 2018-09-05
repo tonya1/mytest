@@ -17,6 +17,7 @@ while getopts bp option ; do
       docker build -t ${IMAGE}:${TIMESTAMP}_${GITHASH} .
       status=$?
       echo "build status $status"
+      exit 1
 
       ;;
     p) # Pass gridappsd tag to docker-compose
