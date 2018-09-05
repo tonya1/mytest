@@ -30,7 +30,7 @@ while getopts bp option ; do
         echo "$CONTAINER"
 
         echo "docker push ${CONTAINER}"
-        docker push "x${CONTAINER}"
+        docker push "${CONTAINER}"
         status=$?
         if [ $status -ne 0 ]; then
           echo "Error: status $status"
