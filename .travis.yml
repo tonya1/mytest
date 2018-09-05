@@ -1,8 +1,8 @@
 # make use of vm's
 
-language: python
-python:
-  - "3.5"
+language: ruby
+# python:
+#   - "3.5"
 
 # have the docker service set up (we'll
 # update it later)
