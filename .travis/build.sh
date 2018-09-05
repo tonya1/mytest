@@ -24,6 +24,7 @@ fi
 # page of your repository and then change the 
 # environment in the settings pannel.  
 
+echo "\n\n\n"
 if [ -n "$DOCKER_USERNAME" -a -n "$DOCKER_PASSWORD" ]; then
   echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin;
   status=$?

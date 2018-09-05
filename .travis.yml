@@ -14,4 +14,4 @@ services:
 #before_install:
   #- './.travis/main.sh'
 
-script: ./.travis/build.sh -b 
+script: ./.travis/build.sh
