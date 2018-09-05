@@ -24,7 +24,10 @@ fi
 # page of your repository and then change the 
 # environment in the settings pannel.  
 
-echo "\n\n\n"
+echo " "
+echo "#####"
+echo " "
+
 if [ -n "$DOCKER_USERNAME" -a -n "$DOCKER_PASSWORD" ]; then
   echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin;
   status=$?
@@ -40,7 +43,7 @@ if [ -n "$DOCKER_USERNAME" -a -n "$DOCKER_PASSWORD" ]; then
     echo "$CONTAINER"
 
     echo "docker push ${CONTAINER}"
-    docker push "${CONTAINER}"
+    docker push "x${CONTAINER}"
     status=$?
     if [ $status -ne 0 ]; then
       echo "Error: status $status"
