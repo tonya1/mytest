@@ -1,3 +1,3 @@
 FROM busybox
 
-ADD this.py
+ADD this.py /
