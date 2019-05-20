@@ -9,6 +9,10 @@ IMAGE="${ORG}mytest"
 TIMESTAMP=`date +'%y%m%d%H'`
 GITHASH=`git log -1 --pretty=format:"%h"`
 
+GITBRANCH=`git rev-parse --abbrev-ref HEAD`
+
+echo "GITBRANCH: $GITBRANCH"
+
 # parse options
 while getopts bp option ; do
   case $option in
