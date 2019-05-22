@@ -1,6 +1,9 @@
 #comment
-FROM busybox
+FROM debian:jessie
 
-RUN git rev-parse --abbrev-ref HEAD
+COPY . /this
+
+RUN apt-get update && apt-get install -y git 
+RUN cd /this; git rev-parse --abbrev-ref HEAD
 
 ADD this.py /
