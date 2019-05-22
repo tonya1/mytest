@@ -9,6 +9,8 @@ IMAGE="${ORG}mytest"
 TIMESTAMP=`date +'%y%m%d%H'`
 GITHASH=`git log -1 --pretty=format:"%h"`
 
+git checkout -b $TRAVIS_BRANCH
+
 git status
 
 echo " "
