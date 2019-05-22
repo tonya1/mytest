@@ -4,10 +4,15 @@ language: ruby
 # python:
 #   - "3.5"
 
+git:
+  depth: false
+
 # have the docker service set up (we'll
 # update it later)
 services:
   - 'docker'
+
+
 
 script:
   - './.travis/build.sh -b'
