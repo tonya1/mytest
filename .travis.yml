@@ -15,8 +15,10 @@ services:
 
 install:
   - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-  - git fetch --unshallow --tags
-  - git symbolic-ref --short HEAD || git checkout -b ${TRAVIS_BRANCH}-test $TRAVIS_BRANCH
+#  - git fetch --unshallow --tags
+#  - git symbolic-ref --short HEAD || git checkout -b ${TRAVIS_BRANCH}-test $TRAVIS_BRANCH
+  - git fetch origin -q
+
 
 script:
   - './.travis/build.sh -b'
