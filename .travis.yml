@@ -14,10 +14,13 @@ services:
   - 'docker'
 
 install:
-  - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+#  - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 #  - git fetch --unshallow --tags
 #  - git symbolic-ref --short HEAD || git checkout -b ${TRAVIS_BRANCH}-test $TRAVIS_BRANCH
-  - git fetch origin -q
+#  - git fetch origin -q
+  - git remote -vv
+  - git remote rm origin
+  - git remote add origin https://github.com/${TRAVIS_REPO_SLUG}.git
 
 
 script:
