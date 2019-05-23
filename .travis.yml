@@ -4,8 +4,11 @@ language: ruby
 # python:
 #   - "3.5"
 
-git:
-  depth: false
+#git:
+  #depth: false
+
+install:
+  - git fetch --unshallow --tags
 
 # have the docker service set up (we'll
 # update it later)
