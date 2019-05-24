@@ -30,7 +30,7 @@ while getopts bp option ; do
   case $option in
     b) # Pass gridappsd tag to docker-compose
       # Docker file on travis relative from root.
-      docker build -t ${IMAGE}:${TIMESTAMP}_${GITHASH} .
+      docker build --build-arg BUILD_VERSION="${TRAVIS_BRANCH}" -t ${IMAGE}:${TIMESTAMP}_${GITHASH} .
       status=$?
       if [ $status -ne 0 ]; then
         echo "Error: status $status"
