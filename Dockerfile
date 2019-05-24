@@ -1,6 +1,10 @@
 #comment
 FROM debian:jessie
 
+ARG BUILD_VERSION
+
+ENV $BUILD_VERSION
+
 COPY . /this
 
 RUN env
