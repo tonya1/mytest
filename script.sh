@@ -2,3 +2,4 @@
 
 echo "this"
 echo "that"
+echo "other"
