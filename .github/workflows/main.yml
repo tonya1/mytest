@@ -9,6 +9,6 @@ jobs:
 
       - name: Checking environment
         run: |
-          echo "${GITHUB_REF#refs/heads/}"
+          echo "${GITHUB_REF#refs/heads///\//_}"
           echo " "
           echo ${GITHUB_REF##*/}
