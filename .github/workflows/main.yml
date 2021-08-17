@@ -1,0 +1,14 @@
+on: [push, pull_request]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    name: Testing
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checking environment
+        run: |
+          echo "${GITHUB_REF#refs/heads/}"
+          echo " "
+          echo ${GITHUB_REF##*/}
