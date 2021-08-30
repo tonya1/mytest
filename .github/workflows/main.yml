@@ -13,6 +13,6 @@ jobs:
           echo " "
           echo ${GITHUB_REF##*/}
           TAG="${GITHUB_REF#refs/heads/}"
-          TAG="${GITHUB_REF#refs/tags/}"
+          TAG="${TAG#refs/tags/}"
           TAG="${TAG//\//_}"
           echo "TAG: $TAG"
